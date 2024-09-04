@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+:root[data-theme="light"] {
+  --bg-color: #fff;
+  --text-color: #000;
+  --text-color-primary: #868686;
+  --color-black-2: #ededed;
+}
+:root[data-theme="dark"] {
+  --bg-color: #050505;
+  --text-color: #fff;
+  --text-color-primary: #a445ed;
+  --color-black-2: #1f1f1f;
+}
+body {
+  background-color: var(--bg-color);
+  padding: 0 21em;
+  margin: 0;
+  font-family: sans-serif;
+}
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+h1,h2,h3,h4 {
+  margin: 0;
+}

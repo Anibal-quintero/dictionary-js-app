@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/assets/logo.svg" type="image/x-icon" />
+    <title>web de diccionario</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="/styles/dictionary.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&family=Source+Code+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./scripts/header.js" defer></script>
+    <script src="./index.js" type="module"></script>
+  </head>
+  <body>
+    <header class="header">
+      <img src="./assets/logo.svg" class="header__logo" alt="Logo" />
+      <div class="header__controls">
+        <div class="header__select">
+          <div class="header__family">Sans serif</div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="8"
+            viewBox="0 0 14 8"
+            class="down__arrow"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              d="m1 1 6 6 6-6"
+            />
+          </svg>
+        </div>
+        <div class="header__option">
+          <button data-font="sans-serif">Sans serif</button>
+          <button data-font="serif">Serif</button>
+          <button data-font="monospace">Mono</button>
+        </div>
+        <span class="header__divider"></span>
+        <div class="header__theme-toggle">
+          <input type="checkbox" checked class="header__toogle" />
+          <img src="/assets//moon.svg" alt="moon-icon" />
+        </div>
+      </div>
+    </header>
+    <section class="search">
+      <input
+        type="text"
+        class="search__input"
+        id="domTextElement"
+        placeholder="Enter a word"
+      />
+      <!-- <span class="search__error hide">Whoops, can't be empty…</span> -->
+      <button
+        aria-label="Search Button"
+        class="search__button"
+        id="search-button"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 18 18"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="m12.663 12.663 3.887 3.887M1 7.664a6.665 6.665 0 1 0 13.33 0 6.665 6.665 0 0 0-13.33 0Z"
+          ></path>
+        </svg>
+      </button>
+    </section>
+    <div class="dictionary-entry">
+      <div class="entry-header">
+        <div class="entry-info"></div>
+        <div class="audio-container">
+          <audio class="audio"></audio>
+          <button class="play-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="3.5em"
+              height="3.5em"
+              viewBox="0 0 24 24"
+            >
+              <path fill="currentColor" d="M8 5.14v14l11-7z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="word-category"></div>
+  </body>
+</html>

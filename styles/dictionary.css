@@ -1,0 +1,81 @@
+.dictionary-entry {
+  color: white;
+}
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+.word {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+.pronunciation {
+  color: var(--text-color-primary);
+  font-weight: normal;
+}
+.play-button {
+  border-radius: 100%;
+  width: 5.5em;
+  height: 5.5em;
+  margin-top: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color-primary);
+  background-color: var(--color-black-2);
+}
+.word-category {
+  color: white;
+}
+.category-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 35px 0;
+}
+.category-title::after {
+  content: "";
+  border-top: 1px solid #979797;
+  width: 100%;
+}
+.category-subtitle {
+  font-weight: normal;
+  color: #757575;
+  margin: 25px 0;
+}
+.category-list {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.category-list p {
+  color: gray;
+}
+.category-list li::marker {
+  color: #a445ed;
+  font-size: 25px;
+}
+.content-synonims {
+  display: flex;
+  align-items: center;
+}
+.list-synonyms {
+  list-style-type: none;
+  margin: 0;
+  display: flex; 
+  gap: 10px;
+}
+.list-synonyms li {
+  color: #a445ed;
+  font-size: 20px;
+}
+footer {
+  display: flex;
+  align-items: center;
+  padding: 40px 0 50px 0;
+}
+footer ul {
+  margin: 0;
+}

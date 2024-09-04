@@ -1,0 +1,23 @@
+.search {
+  position: relative;
+  width: 100%;
+}
+.search input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 20px;
+  background-color: var(--color-black-2);
+  color: var(--text-color);
+  border-radius: 15px;
+  padding-left: 1.5rem;
+  height: 63px;
+}
+.search__button {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: var(--text-color-primary);
+}
