@@ -1,17 +1,16 @@
-.dictionary-entry {
-  color: white;
-}
 .entry-header {
   display: flex;
   justify-content: space-between;
-  margin-top: 60px;
+  margin: 60px 0 40px 0;
+  color: var(--text-color);
 }
 .word {
   font-size: 4rem;
   margin-bottom: 10px;
+  text-transform: capitalize;
 }
 .pronunciation {
-  color: var(--text-color-primary);
+  color: #a445ed;
   font-weight: normal;
 }
 .play-button {
@@ -22,17 +21,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--text-color-primary);
-  background-color: var(--color-black-2);
-}
-.word-category {
-  color: white;
+  color: #a445ed;
+  background-color: #a445ed45;
 }
 .category-title {
   display: flex;
   align-items: center;
   gap: 10px;
   margin: 35px 0;
+  color: var(--text-color);
+  font-style: italic;
 }
 .category-title::after {
   content: "";
@@ -42,30 +40,36 @@
 .category-subtitle {
   font-weight: normal;
   color: #757575;
-  margin: 25px 0;
 }
 .category-list {
   font-size: 18px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  margin: 30px 0;
 }
 .category-list p {
-  color: gray;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+.category-list span {
+  color: #757575;
 }
 .category-list li::marker {
   color: #a445ed;
   font-size: 25px;
 }
-.content-synonims {
+.WordRelationsContainer {
   display: flex;
-  align-items: center;
+  margin: 30px 0;
 }
 .list-synonyms {
   list-style-type: none;
   margin: 0;
-  display: flex; 
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
+  padding: 0 0 0 20px;
 }
 .list-synonyms li {
   color: #a445ed;
@@ -75,7 +79,13 @@ footer {
   display: flex;
   align-items: center;
   padding: 40px 0 50px 0;
+  gap: 20px;
+  color: #757575;
+  font-size: 15px;
 }
-footer ul {
-  margin: 0;
+footer a {
+  color: var(--text-color);
+}
+.source {
+  font-weight: normal;
 }

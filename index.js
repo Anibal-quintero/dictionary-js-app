@@ -8,8 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
   searchButton.click();
 });
 
+input.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    searchButton.click();
+  }
+});
+
 searchButton.addEventListener("click", async () => {
   const value = input.value;
-  const data = await getApi(value); 
+  const data = await getApi(value);
   displayData(data);
 });
