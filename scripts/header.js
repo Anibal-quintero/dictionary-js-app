@@ -12,12 +12,10 @@ headerSelect.addEventListener("click", () => {
   downArrow.style.transform = hidden ? "rotate(0)" : "rotate(180deg)";
 });
 
-function applyTheme() {
+export function applyTheme() {
   const theme = headerToogle.checked ? "dark" : "light";
   document.documentElement.setAttribute("data-theme", theme);
 }
-
-applyTheme();
 
 headerToogle.addEventListener("change", applyTheme);
 

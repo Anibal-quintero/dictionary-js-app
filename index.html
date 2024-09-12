@@ -4,16 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/assets/logo.svg" type="image/x-icon" />
-    <title>web de diccionario</title>
+    <title>Dictionary</title>
     <link rel="stylesheet" href="./index.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/main.css" />
     <link rel="stylesheet" href="/styles/dictionary.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&family=Source+Code+Pro&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Inconsolata&family=Lora&display=swap"
       rel="stylesheet"
     />
-    <script src="./scripts/header.js" defer></script>
     <script src="./index.js" type="module"></script>
   </head>
   <body>
@@ -77,23 +78,22 @@
           ></path>
         </svg>
       </button>
+      <p class="text-danger">Woops! can't be empty...</p>
     </section>
     <div class="dictionary-entry">
-      <div class="entry-header">
-        <div class="entry-info"></div>
-        <div class="audio-container">
-          <audio class="audio"></audio>
-          <button class="play-button">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="3.5em"
-              height="3.5em"
-              viewBox="0 0 24 24"
-            >
-              <path fill="currentColor" d="M8 5.14v14l11-7z" />
-            </svg>
-          </button>
-        </div>
+      <div class="entry-info"></div>
+      <div class="audio-container">
+        <audio class="audio"></audio>
+        <button class="play-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="3.5em"
+            height="3.5em"
+            viewBox="0 0 24 24"
+          >
+            <path fill="currentColor" d="M8 5.14v14l11-7z" />
+          </svg>
+        </button>
       </div>
     </div>
     <div class="word-info-container"></div>

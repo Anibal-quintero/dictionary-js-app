@@ -1,4 +1,4 @@
-.entry-header {
+.dictionary-entry {
   display: flex;
   justify-content: space-between;
   margin: 60px 0 40px 0;
@@ -88,4 +88,15 @@ footer a {
 }
 .source {
   font-weight: normal;
+}
+.error {
+  text-align: center;
+  color: var(--text-color);
+
+}
+.error p {
+  color: #757575;
+  font-size: 18px;
+  line-height: 27px;
+  margin-top: 20px;
 }

@@ -1,5 +1,5 @@
 const entryInfo = document.querySelector(".entry-info");
-const wordInfo = document.querySelector(".word-info-container");
+const wordInfoContainer = document.querySelector(".word-info-container");
 const audio = document.querySelector(".audio");
 const playButton = document.querySelector(".play-button");
 
@@ -103,7 +103,7 @@ function handleMeanings(meanings) {
         )
       );
     }
-    wordInfo.appendChild(nounInfo);
+    wordInfoContainer.appendChild(nounInfo);
   }
 
   if (meanings?.[1]?.definitions) {
@@ -135,7 +135,7 @@ function handleMeanings(meanings) {
         )
       );
     }
-    wordInfo.appendChild(verbInfo);
+    wordInfoContainer.appendChild(verbInfo);
   }
 
   if (meanings?.[2]?.definitions) {
@@ -166,7 +166,7 @@ function handleMeanings(meanings) {
         )
       );
     }
-    wordInfo.appendChild(adjInterjInfo);
+    wordInfoContainer.appendChild(adjInterjInfo);
   }
 }
 
@@ -178,19 +178,28 @@ function handleSources(sources) {
     footer.appendChild(titleFooter);
     const ancla = createAncla(sources, "");
     footer.appendChild(ancla);
-    wordInfo.appendChild(footer);
+    wordInfoContainer.appendChild(footer);
   }
 }
 
 // Función principal para mostrar los datos
 export function displayData(data) {
   if (!data || !Array.isArray(data)) {
-    console.error("Data is invalid or empty");
+    entryInfo.innerHTML = "";
+    playButton.style.display = "none";
+    wordInfoContainer.innerHTML = "";
+    const section = document.createElement("section");
+    section.className = "error";
+    section.appendChild(createBasicElement("h2", "", data.title));
+    section.appendChild(
+      createBasicElement("p", "", `${data.message} ${data.resolution}`)
+    );
+    wordInfoContainer.appendChild(section);
     return;
   }
 
   entryInfo.innerHTML = "";
-  wordInfo.innerHTML = "";
+  wordInfoContainer.innerHTML = "";
 
   if (data?.[0]) {
     entryInfo.appendChild(createBasicElement("h1", "word", data[0].word));
@@ -199,12 +208,10 @@ export function displayData(data) {
     handleMeanings(data[0].meanings);
     handleSources(data[0].sourceUrls);
   }
-
-  console.log(data);
 }
 
 // Evento para reproducir el audio
 playButton.addEventListener("click", () => {
-  audio.volume = 0.6;
+  audio.volume = 0.9;
   audio.play();
 });
