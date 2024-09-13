@@ -17,14 +17,41 @@ body {
   background-color: var(--bg-color);
   padding: 0 21em;
   margin: 0;
-  font-family: sans-serif;
   font-size: 16px;
+}
+body.sans-serif {
+  font-family: "Inter", sans-serif;
+}
+body.serif {
+  font-family: "Lora", serif;
+}
+body.monospace {
+  font-family: "Roboto Mono", monospace;
 }
 button {
   border: none;
   outline: none;
   cursor: pointer;
 }
-h1,h2,h3,h4,p {
+h1,
+h2,
+h3,
+h4,
+p {
   margin: 0;
+}
+@media (max-width: 1160px) {
+  body {
+    padding: 0 14em;
+  }
+}
+@media (max-width: 888px) {
+  body {
+    padding: 0 5em;
+  }
+}
+@media (max-width: 544px) {
+  body {
+    padding: 0 1em;
+  }
 }

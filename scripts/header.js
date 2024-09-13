@@ -20,10 +20,15 @@ export function applyTheme() {
 headerToogle.addEventListener("change", applyTheme);
 
 const buttons = document.querySelectorAll(".header__option button");
+const body = document.body;
 
 buttons.forEach((button) => {
-  button.addEventListener("click", function () {
-    document.body.style.fontFamily = this.getAttribute("data-font");
-    headerFamily.innerHTML = this.getAttribute("data-font");
+  button.addEventListener("click", () => {
+    body.classList.remove("sans-serif", "serif", "monospace");
+    const selectedFont = button.getAttribute("data-font");
+    body.classList.add(selectedFont);
+    headerFamily.innerHTML = button.getAttribute("data-font");
+    headerSelect.click();
   });
 });
+body.classList.add("sans-serif");

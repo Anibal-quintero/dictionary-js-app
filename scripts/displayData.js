@@ -174,10 +174,19 @@ function handleMeanings(meanings) {
 function handleSources(sources) {
   if (sources) {
     const footer = document.createElement("footer");
-    const titleFooter = createBasicElement("h3", "source", "Source");
+    const titleFooter = createBasicElement("h3", "source", "Source:");
     footer.appendChild(titleFooter);
-    const ancla = createAncla(sources, "");
-    footer.appendChild(ancla);
+    const listSource = document.createElement("ul");
+    sources.map((source) => {
+      const li = document.createElement("li");
+      const ancla = createAncla(source, "");
+      const img = document.createElement("img");
+      img.src = "/assets/icon-new-window.svg";
+      li.appendChild(ancla);
+      ancla.appendChild(img);
+      listSource.appendChild(li);
+    });
+    footer.appendChild(listSource);
     wordInfoContainer.appendChild(footer);
   }
 }
