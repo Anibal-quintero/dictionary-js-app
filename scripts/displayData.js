@@ -1,7 +1,7 @@
-const entryInfo = document.querySelector(".entry-info");
-const wordInfoContainer = document.querySelector(".word-info-container");
-const audio = document.querySelector(".audio");
-const playButton = document.querySelector(".play-button");
+const dictionaryDefinition = document.querySelector(".definition-details");
+const wordInfoContainer = document.querySelector(".dictionary-response");
+const audio = document.querySelector(".audio-element");
+const playButton = document.querySelector(".play-audio-button");
 
 playButton.style.display = "none";
 
@@ -63,7 +63,7 @@ function handlePhonetics(phonetics) {
   const audioSrc =
     phonetics?.[0]?.audio || phonetics?.[1]?.audio || phonetics?.[2]?.audio;
   if (pronunciation) {
-    entryInfo.appendChild(
+    dictionaryDefinition.appendChild(
       createBasicElement("h2", "pronunciation", pronunciation)
     );
   }
@@ -194,7 +194,7 @@ function handleSources(sources) {
 // Función principal para mostrar los datos
 export function displayData(data) {
   if (!data || !Array.isArray(data)) {
-    entryInfo.innerHTML = "";
+    dictionaryDefinition.innerHTML = "";
     playButton.style.display = "none";
     wordInfoContainer.innerHTML = "";
     const section = document.createElement("section");
@@ -207,11 +207,11 @@ export function displayData(data) {
     return;
   }
 
-  entryInfo.innerHTML = "";
+  dictionaryDefinition.innerHTML = "";
   wordInfoContainer.innerHTML = "";
 
   if (data?.[0]) {
-    entryInfo.appendChild(createBasicElement("h1", "word", data[0].word));
+    dictionaryDefinition.appendChild(createBasicElement("h1", "word", data[0].word));
 
     handlePhonetics(data[0].phonetics);
     handleMeanings(data[0].meanings);

@@ -1,4 +1,4 @@
-.dictionary-entry {
+.dictionary-definition {
   display: flex;
   justify-content: space-between;
   margin: 60px 0 40px 0;
@@ -13,7 +13,7 @@
   color: #a445ed;
   font-weight: normal;
 }
-.play-button {
+.play-audio-button {
   border-radius: 100%;
   width: 5.5em;
   height: 5.5em;
@@ -45,7 +45,6 @@
   font-size: 18px;
   display: flex;
   flex-direction: column;
-  margin: 30px 0;
 }
 .category-list p {
   color: var(--text-color);
@@ -96,6 +95,11 @@ footer ul li a {
   color: var(--text-color);
   display: flex;
   align-items: center;
+  margin-top: 2px;
+  text-decoration: none;
+}
+footer ul li a:hover {
+  text-decoration: underline;
 }
 footer ul li img {
   width: 17px;

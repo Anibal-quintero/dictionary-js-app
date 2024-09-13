@@ -2,7 +2,7 @@ const headerSelect = document.querySelector(".header__select");
 const headerFamily = document.querySelector(".header__family");
 const headerOption = document.querySelector(".header__option");
 const downArrow = document.querySelector(".down__arrow");
-const headerToogle = document.querySelector(".header__toogle");
+const headerToogle = document.querySelector(".header__toggle");
 
 let hidden = false;
 

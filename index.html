@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/assets/logo.svg" type="image/x-icon" />
-    <title>Dictionary</title>
+    <link rel="icon" href="/assets/book.svg" type="image/x-icon" />
+    <title>Dictionary web app</title>
     <link rel="stylesheet" href="./index.css" />
     <link rel="stylesheet" href="./styles/header.css" />
-    <link rel="stylesheet" href="./styles/main.css" />
-    <link rel="stylesheet" href="/styles/dictionary.css" />
+    <link rel="stylesheet" href="./styles/search-section.css" />
+    <link rel="stylesheet" href="/styles/dictionary-response.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -45,8 +45,8 @@
         </div>
         <span class="header__divider"></span>
         <div class="header__theme-toggle">
-          <input type="checkbox" checked class="header__toogle" />
-          <img src="/assets//moon.svg" alt="moon-icon" />
+          <input type="checkbox" checked class="header__toggle" />
+          <img src="/assets/moon.svg" alt="moon-icon" />
         </div>
       </div>
     </header>
@@ -80,11 +80,11 @@
       </button>
       <p class="text-danger">Woops! can't be empty...</p>
     </section>
-    <div class="dictionary-entry">
-      <div class="entry-info"></div>
-      <div class="audio-container">
-        <audio class="audio"></audio>
-        <button class="play-button">
+    <div class="dictionary-definition">
+      <div class="definition-details"></div>
+      <div>
+        <audio class="audio-element"></audio>
+        <button class="play-audio-button">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="3.5em"
@@ -96,6 +96,6 @@
         </button>
       </div>
     </div>
-    <div class="word-info-container"></div>
+    <div class="dictionary-response"></div>
   </body>
 </html>

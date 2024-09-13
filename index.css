@@ -5,7 +5,7 @@
   --bg-color: #fff;
   --text-color: #000;
   --text-color-primary: #868686;
-  --color-black-2: #ededed;
+  --color-black-2: #d9d9d9;
 }
 :root[data-theme="dark"] {
   --bg-color: #050505;
@@ -15,7 +15,7 @@
 }
 body {
   background-color: var(--bg-color);
-  padding: 0 21em;
+  padding: 0 20em;
   margin: 0;
   font-size: 16px;
 }
