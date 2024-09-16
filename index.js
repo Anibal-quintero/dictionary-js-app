@@ -34,7 +34,7 @@ input.addEventListener("keydown", (event) => {
 
 searchButton.addEventListener("click", async () => {
   const value = input.value.trim().toLowerCase();
-  if (value.trim() === "") {
+  if (value === "") {
     textDanger.style.display = "block";
     return;
   }

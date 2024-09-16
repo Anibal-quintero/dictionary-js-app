@@ -15,9 +15,14 @@
 }
 body {
   background-color: var(--bg-color);
-  padding: 0 20em;
   margin: 0;
   font-size: 16px;
+  display: flex;
+  justify-content: center;
+}
+.wrapper {
+  width: 100%;
+  max-width: 44.3em;
 }
 body.sans-serif {
   font-family: "Inter", sans-serif;

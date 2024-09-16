@@ -23,6 +23,11 @@
   align-items: center;
   color: #a445ed;
   background-color: #a445ed45;
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+.play-audio-button:hover {
+  color: #fff;
+  background-color: #a445ed;
 }
 .category-title {
   display: flex;

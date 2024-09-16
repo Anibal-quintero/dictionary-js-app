@@ -35,7 +35,7 @@
   gap: 10px;
   padding: 15px 8px;
   top: 3.5em;
-  left: -60px;
+  left: -15px;
   width: 10em;
   border-radius: 4px;
   box-shadow: 0px 5px 30px 0px var(--text-color-primary);
@@ -54,20 +54,20 @@
   color: rgb(234, 30, 234);
 }
 .header__divider {
-  border-right: solid 1px var(--text-color);
-  margin: 0 10px;
+  border-right: solid 1px #979797;
+  margin: 0 20px;
 }
 .header__theme-toggle {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
 }
 .header__toggle {
   appearance: none;
   background-color: var(--text-color-primary);
-  width: 41px;
-  height: 22px;
+  width: 40px;
+  height: 20px;
   border-radius: 15px;
   position: relative;
   display: flex;
@@ -79,13 +79,13 @@
   content: "";
   position: absolute;
   top: auto;
-  transform: translateX(0);
+  transform: translateX(2px);
   background-color: white;
   border-radius: 100%;
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   transition: transform 0.2s;
 }
 .header__toggle:checked::before {
-  transform: translateX(100%);
+  transform: translateX(21px);
 }

@@ -3,17 +3,19 @@ const headerFamily = document.querySelector(".header__family");
 const headerOption = document.querySelector(".header__option");
 const downArrow = document.querySelector(".down__arrow");
 const headerToogle = document.querySelector(".header__toggle");
+const themeIcon = document.querySelector(".theme-icon")
 
-let hidden = false;
+let showFontOptions = false;
 
 headerSelect.addEventListener("click", () => {
-  hidden = !hidden;
-  headerOption.style.visibility = hidden ? "visible" : "hidden";
-  downArrow.style.transform = hidden ? "rotate(0)" : "rotate(180deg)";
+  showFontOptions = !showFontOptions;
+  headerOption.style.visibility = showFontOptions ? "visible" : "hidden";
+  downArrow.style.transform = showFontOptions ? "rotate(0)" : "rotate(180deg)";
 });
 
 export function applyTheme() {
   const theme = headerToogle.checked ? "dark" : "light";
+  themeIcon.src = headerToogle.checked ? "/assets/moon.svg" : "/assets/sun.svg"
   document.documentElement.setAttribute("data-theme", theme);
 }
 
