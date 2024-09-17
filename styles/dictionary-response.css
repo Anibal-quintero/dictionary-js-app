@@ -32,7 +32,6 @@
 .category-title {
   display: flex;
   align-items: center;
-  gap: 10px;
   margin: 35px 0;
   color: var(--text-color);
   font-style: italic;
@@ -40,7 +39,8 @@
 .category-title::after {
   content: "";
   border-top: 1px solid #979797;
-  width: 100%;
+  flex-grow: 1;
+  margin-left: 20px;
 }
 .category-subtitle {
   font-weight: normal;

@@ -75,109 +75,38 @@ function handlePhonetics(phonetics) {
 
 // Función para mostrar los significados
 function handleMeanings(meanings) {
-  if (meanings?.[0]) {
-    const nounInfo = document.createElement("div");
-    nounInfo.appendChild(
-      createBasicElement("h2", "category-title", meanings[0].partOfSpeech)
-    );
-    nounInfo.appendChild(
-      createBasicElement("h3", "category-subtitle", "Meaning")
-    );
-    const listDefinition = createList(meanings[0].definitions, "category-list");
-    nounInfo.appendChild(listDefinition);
-    if (meanings[0].synonyms.length > 0) {
+  if (meanings.length > 0) {
+    meanings.forEach((meaning) => {
+      const nounInfo = document.createElement("div");
       nounInfo.appendChild(
-        createSynonymContainer(
-          meanings[0].synonyms,
-          "list-synonyms",
-          "Synonyms"
-        )
+        createBasicElement("h2", "category-title", meaning.partOfSpeech)
       );
-    }
-    if (meanings[0].antonyms.length > 0) {
       nounInfo.appendChild(
-        createSynonymContainer(
-          meanings[0].antonyms,
-          "list-synonyms",
-          "Antonyms"
-        )
+        createBasicElement("h3", "category-subtitle", "Meaning")
       );
-    }
-    wordInfoContainer.appendChild(nounInfo);
-  }
+      const listDefinition = createList(meaning.definitions, "category-list");
+      nounInfo.appendChild(listDefinition);
 
-  if (meanings?.[1]?.definitions) {
-    const verbInfo = document.createElement("div");
-    verbInfo.appendChild(
-      createBasicElement("h2", "category-title", meanings[1].partOfSpeech)
-    );
-    verbInfo.appendChild(
-      createBasicElement("h3", "category-subtitle", "Meaning")
-    );
-    const listDefinition = createList(meanings[1].definitions, "category-list");
-    verbInfo.appendChild(listDefinition);
-
-    if (meanings[1].synonyms.length > 0) {
-      verbInfo.appendChild(
-        createSynonymContainer(
-          meanings[1].synonyms,
-          "list-synonyms",
-          "Synonyms"
-        )
-      );
-    }
-    if (meanings[1].antonyms.length > 0) {
-      verbInfo.appendChild(
-        createSynonymContainer(
-          meanings[1].antonyms,
-          "list-synonyms",
-          "Antonyms"
-        )
-      );
-    }
-    wordInfoContainer.appendChild(verbInfo);
-  }
-
-  if (meanings?.[2]?.definitions) {
-    const adjInterjInfo = document.createElement("div");
-    adjInterjInfo.appendChild(
-      createBasicElement("h2", "category-title", meanings[2].partOfSpeech)
-    );
-    adjInterjInfo.appendChild(
-      createBasicElement("h3", "category-subtitle", "Meaning")
-    );
-    const listDefinition = createList(meanings[2].definitions, "category-list");
-    adjInterjInfo.appendChild(listDefinition);
-    if (meanings[2].synonyms.length > 0) {
-      adjInterjInfo.appendChild(
-        createSynonymContainer(
-          meanings[2].synonyms,
-          "list-synonyms",
-          "Synonyms"
-        )
-      );
-    }
-    if (meanings[2].antonyms.length > 0) {
-      adjInterjInfo.appendChild(
-        createSynonymContainer(
-          meanings[2].antonyms,
-          "list-synonyms",
-          "Antonyms"
-        )
-      );
-    }
-    wordInfoContainer.appendChild(adjInterjInfo);
+      const handleSynonymsOrAntonyms = (items, className, title) => {
+        if (items.length > 0) {
+          nounInfo.appendChild(createSynonymContainer(items, className, title));
+        }
+      };
+      handleSynonymsOrAntonyms(meaning.synonyms, "list-synonyms", "Synonyms");
+      handleSynonymsOrAntonyms(meaning.antonyms, "list-synonyms", "Antonyms");
+      wordInfoContainer.appendChild(nounInfo);
+    });
   }
 }
 
 // Función para mostrar las fuentes de la información
 function handleSources(sources) {
-  if (sources) {
+  if (sources.length > 0) {
     const footer = document.createElement("footer");
     const titleFooter = createBasicElement("h3", "source", "Source:");
     footer.appendChild(titleFooter);
     const listSource = document.createElement("ul");
-    sources.map((source) => {
+    sources.forEach((source) => {
       const li = document.createElement("li");
       const ancla = createAncla(source, "");
       const img = document.createElement("img");
@@ -211,7 +140,9 @@ export function displayData(data) {
   wordInfoContainer.innerHTML = "";
 
   if (data?.[0]) {
-    dictionaryDefinition.appendChild(createBasicElement("h1", "word", data[0].word));
+    dictionaryDefinition.appendChild(
+      createBasicElement("h1", "word", data[0].word)
+    );
 
     handlePhonetics(data[0].phonetics);
     handleMeanings(data[0].meanings);
