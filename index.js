@@ -17,10 +17,14 @@ async function getApi(value) {
   input.classList.add("loading");
   try {
     const res = await fetch(`${url}/${value}`);
+    if (!res.ok && res.status === 404) {
+      const errorData = await res.json();
+      return errorData;
+    }
     return await res.json();
   } catch (error) {
     console.log(error);
-    return [];
+    return null;
   } finally {
     input.classList.remove("loading");
   }

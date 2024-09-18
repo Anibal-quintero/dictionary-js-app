@@ -5,7 +5,6 @@ const playButton = document.querySelector(".play-audio-button");
 
 playButton.style.display = "none";
 
-// Función para crear elementos de encabezado
 function createBasicElement(tag, className, textContent) {
   const header = document.createElement(tag);
   header.className = className;
@@ -13,7 +12,6 @@ function createBasicElement(tag, className, textContent) {
   return header;
 }
 
-// Función para crear elementos ancla
 function createAncla(source, className) {
   const ancla = document.createElement("a");
   ancla.href = source;
@@ -23,7 +21,6 @@ function createAncla(source, className) {
   return ancla;
 }
 
-// Función para crear una lista a partir de un array de elementos
 function createList(items, className) {
   const list = document.createElement("ul");
   list.className = className;
@@ -39,7 +36,6 @@ function createList(items, className) {
   return list;
 }
 
-// Función para crear una lista de sinonimos o antonimos a partir de un array de elementos
 function createSynonymContainer(item, className, h3title) {
   const synonims = document.createElement("div");
   synonims.className = "WordRelationsContainer";
@@ -56,16 +52,11 @@ function createSynonymContainer(item, className, h3title) {
   return synonims;
 }
 
-// Función para mostrar la información de fonética
 function handlePhonetics(phonetics) {
-  const pronunciation =
-    phonetics?.[0]?.text || phonetics?.[1]?.text || phonetics?.[2]?.text;
-  const audioSrc =
-    phonetics?.[0]?.audio || phonetics?.[1]?.audio || phonetics?.[2]?.audio;
+  const pronunciation = phonetics?.[0]?.text || phonetics?.[1]?.text || phonetics?.[2]?.text;
+  const audioSrc = phonetics?.[0]?.audio || phonetics?.[1]?.audio || phonetics?.[2]?.audio;
   if (pronunciation) {
-    dictionaryDefinition.appendChild(
-      createBasicElement("h2", "pronunciation", pronunciation)
-    );
+    dictionaryDefinition.appendChild(createBasicElement("h2", "pronunciation", pronunciation));
   }
   playButton.style.display = audioSrc ? "block" : "none";
   if (audioSrc) {
@@ -73,7 +64,6 @@ function handlePhonetics(phonetics) {
   }
 }
 
-// Función para mostrar los significados
 function handleMeanings(meanings) {
   if (meanings.length > 0) {
     meanings.forEach((meaning) => {
@@ -99,7 +89,6 @@ function handleMeanings(meanings) {
   }
 }
 
-// Función para mostrar las fuentes de la información
 function handleSources(sources) {
   if (sources.length > 0) {
     const footer = document.createElement("footer");
@@ -120,18 +109,15 @@ function handleSources(sources) {
   }
 }
 
-// Función principal para mostrar los datos
 export function displayData(data) {
-  if (!data || !Array.isArray(data)) {
+  if (!data || typeof data !== "object" || data.title) {
     dictionaryDefinition.innerHTML = "";
     playButton.style.display = "none";
     wordInfoContainer.innerHTML = "";
     const section = document.createElement("section");
     section.className = "error";
     section.appendChild(createBasicElement("h2", "", data.title));
-    section.appendChild(
-      createBasicElement("p", "", `${data.message} ${data.resolution}`)
-    );
+    section.appendChild(createBasicElement("p", "", `${data.message} ${data.resolution}`));
     wordInfoContainer.appendChild(section);
     return;
   }
@@ -150,7 +136,6 @@ export function displayData(data) {
   }
 }
 
-// Evento para reproducir el audio
 playButton.addEventListener("click", () => {
   audio.volume = 0.9;
   audio.play();
